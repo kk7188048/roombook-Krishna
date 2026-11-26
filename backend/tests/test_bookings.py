@@ -1,3 +1,8 @@
+from sqlalchemy.dialects import postgresql
+
+from app.routers.bookings import locked_room_query
+
+
 def test_list_bookings_for_date(client):
     res = client.get("/bookings", params={"date": "2026-12-07"})
     assert res.status_code == 200
@@ -142,3 +147,26 @@ def test_identical_booking_still_rejected(client):
         },
     )
     assert res.status_code == 409
+
+
+def test_locked_room_query_uses_for_update():
+    stmt = locked_room_query(1)
+    compiled = stmt.compile(dialect=postgresql.dialect())
+    assert "FOR UPDATE" in str(compiled)
+
+
+def test_second_identical_booking_is_rejected(client):
+    payload = {
+        "room_id": 3,
+        "creator_id": 2,
+        "title": "Pairing",
+        "attendee_ids": [2, 6],
+        "start": "2026-12-07T15:00:00",
+        "end": "2026-12-07T15:30:00",
+    }
+    first = client.post("/bookings", json=payload)
+    assert first.status_code == 201
+
+    second = client.post("/bookings", json=payload)
+    assert second.status_code == 409
+    assert second.json()["detail"] == "Room is already booked for that time"

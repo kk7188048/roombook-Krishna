@@ -46,3 +46,14 @@
 - Timestamps are serialized as naive IST plus a fixed `+05:30` offset; no UTC conversion.
 - `POST /bookings` is unchanged. Enforcing office rules there is deferred to keep this PR scoped to the `/suggest` endpoint.
 - AI usage: used AI to check interval math and catch the creator-without-attendee conflict case; rejected the stricter intern-attendee reading and changing `POST /bookings` in this PR.
+
+## Task 3: prevent double booking
+
+- Chose a room-row lock: `SELECT ... FROM rooms WHERE id = ... FOR UPDATE` in `locked_room_query`, taken as the first database operation in `create_booking` and held until `db.commit()` or rollback.
+- Serializes writers for the same room on PostgreSQL/Neon without a migration, extension, or new table. Locking `rooms.id` is necessary because no `bookings` row exists yet for the incoming request.
+- Rejected a PostgreSQL exclusion constraint: stronger, but needs `btree_gist`, a migration, special SQLite handling, and error-code mapping; too much for this task.
+- Rejected an advisory lock: also room-scoped, but more opaque and Postgres-only.
+- Stops working if another writer inserts bookings without taking this lock, on databases that ignore `FOR UPDATE`, or under stricter isolation that requires retrying serialization failures.
+- SQLite ignores `FOR UPDATE`, so the test checks the compiled PostgreSQL SQL and a sequential duplicate returns `409`; true simultaneous contention is not verified by pytest.
+- The sequential duplicate test already passed before this change; it documents the user-visible outcome, while the lock is what addresses concurrency.
+- AI usage: used AI to compare locking approaches and reject heavier schema options.

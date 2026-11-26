@@ -12,6 +12,10 @@ from ..schemas import BookingIn, BookingOut
 router = APIRouter(prefix="/bookings", tags=["bookings"])
 
 
+def locked_room_query(room_id: int):
+    return select(Room).where(Room.id == room_id).with_for_update()
+
+
 @router.get("", response_model=list[BookingOut])
 def list_bookings(
     date: date | None = None,
@@ -33,7 +37,7 @@ def list_bookings(
 
 @router.post("", response_model=BookingOut, status_code=201)
 def create_booking(payload: BookingIn, db: Session = Depends(get_db)):
-    room = db.get(Room, payload.room_id)
+    room = db.scalar(locked_room_query(payload.room_id))
     if room is None:
         raise HTTPException(status_code=404, detail="Room not found")
     if db.get(User, payload.creator_id) is None:
