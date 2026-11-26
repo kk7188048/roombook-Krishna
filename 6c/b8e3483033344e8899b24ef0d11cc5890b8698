@@ -1,0 +1,81 @@
+frontend/src/api.js
+  s_6da27b5bb00e1a::t_8f1c08d13083a7 8-10
+frontend/src/api.test.js
+  s_6da27b5bb00e1a::t_22ce7aa087e643 3
+  s_6da27b5bb00e1a::t_3a2d0e91f86d6b 1-2,4-21
+  s_6da27b5bb00e1a::t_67b542d2337b35 22-35
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "6cb8e3483033344e8899b24ef0d11cc5890b8698",
+  "branch": "feat/find-a-slot-form",
+  "prompts": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "total_additions": 281,
+      "total_deletions": 3,
+      "accepted_lines": 84,
+      "overriden_lines": 2
+    }
+  },
+  "sessions": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "stats": {
+        "total_additions": 281,
+        "total_deletions": 3,
+        "accepted_lines": 84,
+        "overriden_lines": 2,
+        "files": {
+          "DECISIONS.md": {
+            "total_additions": 11,
+            "total_deletions": 0,
+            "accepted_lines": 11,
+            "overriden_lines": 0
+          },
+          "frontend/src/App.jsx": {
+            "total_additions": 2,
+            "total_deletions": 0,
+            "accepted_lines": 2,
+            "overriden_lines": 0
+          },
+          "frontend/src/api.js": {
+            "total_additions": 10,
+            "total_deletions": 1,
+            "accepted_lines": 3,
+            "overriden_lines": 0
+          },
+          "frontend/src/api.test.js": {
+            "total_additions": 36,
+            "total_deletions": 1,
+            "accepted_lines": 35,
+            "overriden_lines": 0
+          },
+          "frontend/src/components/FindSlotForm.jsx": {
+            "total_additions": 192,
+            "total_deletions": 1,
+            "accepted_lines": 3,
+            "overriden_lines": 2
+          },
+          "frontend/src/styles.css": {
+            "total_additions": 30,
+            "total_deletions": 0,
+            "accepted_lines": 30,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  }
+}
