@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import date, datetime
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -55,3 +55,26 @@ class BookingOut(BaseModel):
     attendees: list[UserOut]
     start: datetime
     end: datetime
+
+
+class SuggestRequest(BaseModel):
+    requester_id: int
+    attendee_ids: list[int] = Field(default_factory=list)
+    duration_minutes: int = Field(ge=15, le=240)
+    date: date
+
+    @field_validator("duration_minutes")
+    @classmethod
+    def check_duration_step(cls, value: int) -> int:
+        if value % 15:
+            raise ValueError("duration_minutes must be a multiple of 15")
+        return value
+
+
+class SlotOut(BaseModel):
+    start: datetime
+    end: datetime
+
+
+class SuggestResponse(BaseModel):
+    slots: list[SlotOut]
