@@ -12,3 +12,4 @@ dist/
 # Local env
 .env
 .DS_Store
+WORKPLAN.local.md

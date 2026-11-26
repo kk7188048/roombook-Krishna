@@ -82,3 +82,63 @@ def test_unknown_attendee(client):
         },
     )
     assert res.status_code == 400
+
+
+def test_back_to_back_booking_after_hiring_panel(client):
+    res = client.post(
+        "/bookings",
+        json={
+            "room_id": 1,
+            "creator_id": 3,
+            "title": "After hiring panel",
+            "attendee_ids": [3],
+            "start": "2026-12-07T11:30:00",
+            "end": "2026-12-07T12:00:00",
+        },
+    )
+    assert res.status_code == 201
+
+
+def test_back_to_back_booking_before_standup(client):
+    res = client.post(
+        "/bookings",
+        json={
+            "room_id": 3,
+            "creator_id": 1,
+            "title": "Before standup",
+            "attendee_ids": [1],
+            "start": "2026-12-07T10:45:00",
+            "end": "2026-12-07T11:45:00",
+        },
+    )
+    assert res.status_code == 201
+
+
+def test_partial_overlap_still_rejected(client):
+    res = client.post(
+        "/bookings",
+        json={
+            "room_id": 3,
+            "creator_id": 1,
+            "title": "Partial overlap",
+            "attendee_ids": [1],
+            "start": "2026-12-07T12:00:00",
+            "end": "2026-12-07T12:30:00",
+        },
+    )
+    assert res.status_code == 409
+
+
+def test_identical_booking_still_rejected(client):
+    res = client.post(
+        "/bookings",
+        json={
+            "room_id": 3,
+            "creator_id": 1,
+            "title": "Identical booking",
+            "attendee_ids": [1],
+            "start": "2026-12-07T11:45:00",
+            "end": "2026-12-07T12:15:00",
+        },
+    )
+    assert res.status_code == 409
