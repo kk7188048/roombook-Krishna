@@ -1,0 +1,48 @@
+backend/tests/test_bookings.py
+  s_6da27b5bb00e1a::t_618356dfbec6ad 150-172
+  s_6da27b5bb00e1a::t_c03f4f0d1396b6 1-5
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "07e527ce1c89b5cec486cc1dade34ad3c16a173a",
+  "branch": "feat/prevent-double-booking",
+  "prompts": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "krishna.kumar@checkmed.io <krishna.kumar@checkmed.io>",
+      "total_additions": 28,
+      "total_deletions": 0,
+      "accepted_lines": 28,
+      "overriden_lines": 0
+    }
+  },
+  "sessions": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "krishna.kumar@checkmed.io <krishna.kumar@checkmed.io>",
+      "stats": {
+        "total_additions": 28,
+        "total_deletions": 0,
+        "accepted_lines": 28,
+        "overriden_lines": 0,
+        "files": {
+          "backend/tests/test_bookings.py": {
+            "total_additions": 28,
+            "total_deletions": 0,
+            "accepted_lines": 28,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  }
+}
