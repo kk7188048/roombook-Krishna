@@ -1,0 +1,8 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "f74cf5ea0b636b136bd2e4aca01b2929d3c34f2f",
+  "branch": "feat/prevent-double-booking",
+  "prompts": {}
+}
