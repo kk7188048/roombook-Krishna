@@ -1,0 +1,8 @@
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "fa84777c547c074d3bdc19bbf2db19138a88c939",
+  "branch": "feat/suggest-slots",
+  "prompts": {}
+}
