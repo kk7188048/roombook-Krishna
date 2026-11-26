@@ -1,0 +1,71 @@
+backend/app/scheduling.py
+  s_6da27b5bb00e1a::t_f03aa041aecb4d 1,7-45
+backend/app/schemas.py
+  s_6da27b5bb00e1a::t_6662284cae96a8 1
+  s_6da27b5bb00e1a::t_20921c6039afb2 58-80
+backend/app/routers/rooms.py
+  s_6da27b5bb00e1a::t_05bc240a52ede8 39-97
+  s_6da27b5bb00e1a::t_884dd57408d056 1-2,6,9-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "f6f09989efdd062a020ff27e96430459b78fa6a4",
+  "branch": "feat/suggest-slots",
+  "prompts": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "krishna.kumar@checkmed.io <krishna.kumar@checkmed.io>",
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 142,
+      "overriden_lines": 0
+    }
+  },
+  "sessions": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "krishna.kumar@checkmed.io <krishna.kumar@checkmed.io>",
+      "stats": {
+        "total_additions": 0,
+        "total_deletions": 0,
+        "accepted_lines": 142,
+        "overriden_lines": 0,
+        "files": {
+          "DECISIONS.md": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 13,
+            "overriden_lines": 0
+          },
+          "backend/app/routers/rooms.py": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 65,
+            "overriden_lines": 0
+          },
+          "backend/app/scheduling.py": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 40,
+            "overriden_lines": 0
+          },
+          "backend/app/schemas.py": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 24,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  }
+}
