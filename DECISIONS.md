@@ -33,3 +33,16 @@
 
 - Used AI to check interval math and review the starter code.
 - Rejected reading the cleaning-buffer rule as requiring the buffer to finish before 18:30, and rejected an immediate UTC migration: neither is required for this task.
+
+## Task 2: slot suggestions
+
+- Assumptions: half-open intervals; naive database times are IST; the requester counts as a participant; participant conflicts include bookings where the user is creator or attendee.
+- Intern rule: checked for the requester only; an intern attendee is allowed. Rejected requester+attendees because the spec says users who "book", not who attend. `403` is used because this is permission, not bad input.
+- Duration: 15–240 minutes in 15-minute steps; invalid values return `422`.
+- Weekend dates return an empty slot list instead of an error.
+- Cleaning buffer: applies strictly when a booking or candidate is longer than 60 minutes. The candidate buffer is used only for room conflicts; attendee conflicts use raw meeting times. A candidate buffer may extend past 18:30 if the meeting ends by 18:30.
+- One day-intersecting query loads bookings with attendees; participant conflicts are filtered in Python. No second query or SQL `or_()`.
+- Slot generation stops at `18:30 - duration`; slot starts are `datetime` values built from the office open time.
+- Timestamps are serialized as naive IST plus a fixed `+05:30` offset; no UTC conversion.
+- `POST /bookings` is unchanged. Enforcing office rules there is deferred to keep this PR scoped to the `/suggest` endpoint.
+- AI usage: used AI to check interval math and catch the creator-without-attendee conflict case; rejected the stricter intern-attendee reading and changing `POST /bookings` in this PR.
