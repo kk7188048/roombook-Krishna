@@ -1,0 +1,79 @@
+backend/app/scheduling.py
+  s_6da27b5bb00e1a::t_5dcfe5d0501059 6
+backend/tests/test_bookings.py
+  s_6da27b5bb00e1a::t_8a93f24400c956 85-144
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "af120e233bb5fa508180e7615ed343531db7db0c",
+  "branch": "fix/back-to-back-bookings",
+  "prompts": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "krishna.kumar@checkmed.io <krishna.kumar@checkmed.io>",
+      "total_additions": 186,
+      "total_deletions": 1,
+      "accepted_lines": 96,
+      "overriden_lines": 0
+    }
+  },
+  "sessions": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "krishna.kumar@checkmed.io <krishna.kumar@checkmed.io>",
+      "stats": {
+        "total_additions": 186,
+        "total_deletions": 1,
+        "accepted_lines": 96,
+        "overriden_lines": 0,
+        "files": {
+          ".env": {
+            "total_additions": 1,
+            "total_deletions": 0,
+            "accepted_lines": 0,
+            "overriden_lines": 0
+          },
+          ".gitignore": {
+            "total_additions": 1,
+            "total_deletions": 0,
+            "accepted_lines": 0,
+            "overriden_lines": 0
+          },
+          "DECISIONS.md": {
+            "total_additions": 35,
+            "total_deletions": 0,
+            "accepted_lines": 35,
+            "overriden_lines": 0
+          },
+          "WORKPLAN.local.md": {
+            "total_additions": 88,
+            "total_deletions": 0,
+            "accepted_lines": 0,
+            "overriden_lines": 0
+          },
+          "backend/app/scheduling.py": {
+            "total_additions": 1,
+            "total_deletions": 1,
+            "accepted_lines": 1,
+            "overriden_lines": 0
+          },
+          "backend/tests/test_bookings.py": {
+            "total_additions": 60,
+            "total_deletions": 0,
+            "accepted_lines": 60,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  }
+}
