@@ -1,0 +1,72 @@
+frontend/src/App.jsx
+  s_6da27b5bb00e1a::t_4eb42157369f64 5
+  s_6da27b5bb00e1a::t_bef04984b520bf 18
+frontend/src/components/FindSlotForm.jsx
+  s_6da27b5bb00e1a::t_9b68523840b1cd 35
+  s_6da27b5bb00e1a::t_75537d4e0e9b93 177-179
+  s_6da27b5bb00e1a::t_b690043a98eeb2 15
+frontend/src/styles.css
+  s_6da27b5bb00e1a::t_10d420bfe180d6 85-114
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "ce28c9567cb2d55cffb6ba9ba0c2fb140ff20801",
+  "branch": "feat/find-a-slot-form",
+  "prompts": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "total_additions": 0,
+      "total_deletions": 0,
+      "accepted_lines": 48,
+      "overriden_lines": 0
+    }
+  },
+  "sessions": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "stats": {
+        "total_additions": 0,
+        "total_deletions": 0,
+        "accepted_lines": 48,
+        "overriden_lines": 0,
+        "files": {
+          "DECISIONS.md": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 11,
+            "overriden_lines": 0
+          },
+          "frontend/src/App.jsx": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 2,
+            "overriden_lines": 0
+          },
+          "frontend/src/components/FindSlotForm.jsx": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 5,
+            "overriden_lines": 0
+          },
+          "frontend/src/styles.css": {
+            "total_additions": 0,
+            "total_deletions": 0,
+            "accepted_lines": 30,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  }
+}
