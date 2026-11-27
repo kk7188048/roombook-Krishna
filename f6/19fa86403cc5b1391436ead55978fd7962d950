@@ -1,0 +1,56 @@
+DECISIONS.md
+  s_6da27b5bb00e1a::t_91e50380d5d739 58
+  s_6da27b5bb00e1a::t_f78b79af2e40cd 34
+  s_6da27b5bb00e1a::t_56fe9771588810 47
+  s_6da27b5bb00e1a::t_181f2bf2d0b460 69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "f619fa86403cc5b1391436ead55978fd7962d950",
+  "branch": "docs/final-cleanup",
+  "prompts": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "total_additions": 26,
+      "total_deletions": 12,
+      "accepted_lines": 4,
+      "overriden_lines": 1
+    }
+  },
+  "sessions": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "stats": {
+        "total_additions": 26,
+        "total_deletions": 12,
+        "accepted_lines": 4,
+        "overriden_lines": 1,
+        "files": {
+          "DECISIONS.md": {
+            "total_additions": 10,
+            "total_deletions": 11,
+            "accepted_lines": 4,
+            "overriden_lines": 1
+          },
+          "frontend/vite.task4.config.js": {
+            "total_additions": 16,
+            "total_deletions": 1,
+            "accepted_lines": 0,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  }
+}
