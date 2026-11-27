@@ -82,3 +82,33 @@ td {
 .error {
   color: #cf222e;
 }
+
+.find-slot-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.find-slot-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.find-slot-form select[multiple] {
+  min-height: 96px;
+}
+
+.slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.slots button {
+  padding: 6px 10px;
+}

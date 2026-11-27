@@ -2,6 +2,7 @@ import { useState } from "react";
 import DateNav from "./components/DateNav.jsx";
 import RoomList from "./components/RoomList.jsx";
 import BookingList from "./components/BookingList.jsx";
+import FindSlotForm from "./components/FindSlotForm.jsx";
 
 const FIRST_SEEDED_DAY = "2026-12-07";
 
@@ -14,6 +15,7 @@ export default function App() {
         <h1>RoomBook</h1>
         <DateNav date={date} onChange={setDate} />
       </header>
+      <FindSlotForm date={date} onDateChange={setDate} />
       <div className="layout">
         <RoomList />
         <BookingList date={date} />

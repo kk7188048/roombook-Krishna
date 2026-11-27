@@ -57,3 +57,14 @@
 - SQLite ignores `FOR UPDATE`, so the test checks the compiled PostgreSQL SQL and a sequential duplicate returns `409`; true simultaneous contention is not verified by pytest.
 - The sequential duplicate test already passed before this change; it documents the user-visible outcome, while the lock is what addresses concurrency.
 - AI usage: used AI to compare locking approaches and reject heavier schema options.
+
+## Task 4: find a slot form
+
+- Added a requester dropdown because the UI spec omits the requester but `/suggest` and `/bookings` both require one; default is Asha (`id: 1`).
+- Reused the app-level date instead of a second independent date state, so the form and booking list stay in sync.
+- Sent slot strings unchanged to `POST /bookings`. The backend strips the `+05:30` offset and stores the same wall-clock time as naive IST.
+- Used a fixed title `Booked from UI` because the form does not ask for a title.
+- Added `error.status` to frontend API errors so a `409` race can be detected reliably.
+- On booking success or `409`, refreshed suggestions. If a `409` refresh returns no slots, cleared the race notice and showed `No slots available.`
+- Rejected adding Vitest/React Testing Library because the frontend has no test setup and this task is intentionally small. Verified with Node tests for the API helper, `npm run build`, and a manual UI checklist.
+- AI usage: used AI to plan the UI flow; rejected frontend UTC conversion and new frontend test dependencies.
