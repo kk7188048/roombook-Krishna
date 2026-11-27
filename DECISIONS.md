@@ -31,8 +31,7 @@
 
 ## AI usage
 
-- Used AI to check interval math and review the starter code.
-- Rejected reading the cleaning-buffer rule as requiring the buffer to finish before 18:30, and rejected an immediate UTC migration: neither is required for this task.
+- AI usage: Used Antigravity to review the code and the interval bug. Used ChatGPT to understand the assignment and half-open intervals. Rejected patching many callers; fixed the shared helper once.
 
 ## Task 2: slot suggestions
 
@@ -45,7 +44,7 @@
 - Slot generation stops at `18:30 - duration`; slot starts are `datetime` values built from the office open time.
 - Timestamps are serialized as naive IST plus a fixed `+05:30` offset; no UTC conversion.
 - `POST /bookings` is unchanged. Enforcing office rules there is deferred to keep this PR scoped to the `/suggest` endpoint.
-- AI usage: used AI to check interval math and catch the creator-without-attendee conflict case; rejected the stricter intern-attendee reading and changing `POST /bookings` in this PR.
+- AI usage: Used Antigravity to plan the slot logic and check edge cases like cleaning buffer, lunch time, and creator conflicts. Rejected the stricter intern rule and UTC change as out of scope.
 
 ## Task 3: prevent double booking
 
@@ -56,7 +55,7 @@
 - Stops working if another writer inserts bookings without taking this lock, on databases that ignore `FOR UPDATE`, or under stricter isolation that requires retrying serialization failures.
 - SQLite ignores `FOR UPDATE`, so the test checks the compiled PostgreSQL SQL and a sequential duplicate returns `409`; true simultaneous contention is not verified by pytest.
 - The sequential duplicate test already passed before this change; it documents the user-visible outcome, while the lock is what addresses concurrency.
-- AI usage: used AI to compare locking approaches and reject heavier schema options.
+- AI usage: Used Antigravity to compare locking options. Used ChatGPT to understand SELECT ... FOR UPDATE on Postgres and SQLite. Rejected the exclusion constraint and advisory lock; both were more complex than needed.
 
 ## Task 4: find a slot form
 
@@ -66,5 +65,5 @@
 - Used a fixed title `Booked from UI` because the form does not ask for a title.
 - Added `error.status` to frontend API errors so a `409` race can be detected reliably.
 - On booking success or `409`, refreshed suggestions. If a `409` refresh returns no slots, cleared the race notice and showed `No slots available.`
-- Rejected adding Vitest/React Testing Library because the frontend has no test setup and this task is intentionally small. Verified with Node tests for the API helper, `npm run build`, and a manual UI checklist.
-- AI usage: used AI to plan the UI flow; rejected frontend UTC conversion and new frontend test dependencies.
+- Rejected adding Vitest/React Testing Library because the frontend has no test setup and this task is intentionally small. Verified with npm run build and a manual UI checklist.
+- AI usage: Used Antigravity to plan the form and the 409 race flow. Used ChatGPT to understand the assignment and edge cases. Rejected Vitest/RTL and UTC changes. Verified with npm run build and a manual UI check.

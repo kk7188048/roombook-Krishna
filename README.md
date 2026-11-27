@@ -58,6 +58,15 @@ npm run dev
 
 Open http://localhost:5173. The dev server proxies `/api/*` to the backend on port 8000.
 
+The page includes a "Find a slot" form with room, requester, attendees, duration, and date.
+
+### Frontend tests
+
+```bash
+cd frontend
+node --test src/api.test.js
+```
+
 ## Sample data
 
 `python -m app.seed` loads 6 users, 3 rooms and a few bookings. Most bookings are on **Monday 2026-12-07**, and there are some on the days around it. The frontend opens on that date.
@@ -84,6 +93,7 @@ Open http://localhost:5173. The dev server proxies `/api/*` to the backend on po
 | GET | `/rooms` | |
 | GET | `/rooms/{id}` | |
 | POST | `/rooms` | `{name, capacity}` |
+| POST | `/rooms/{id}/suggest` | `{requester_id, attendee_ids, duration_minutes, date}`; returns the first 3 valid slots |
 | GET | `/users` | |
 | GET | `/bookings?date=YYYY-MM-DD&room_id=` | Both filters optional |
 | POST | `/bookings` | `{room_id, creator_id, title, attendee_ids, start, end}`; returns `409` if the room is taken |
