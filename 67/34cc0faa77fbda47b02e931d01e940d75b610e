@@ -1,0 +1,48 @@
+README.md
+  s_6da27b5bb00e1a::t_ada6b8bac012a6 96
+  s_6da27b5bb00e1a::t_5dba036eb1e38e 61-69
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "autter_version": "2.2.1",
+  "base_commit_sha": "6734cc0faa77fbda47b02e931d01e940d75b610e",
+  "branch": "docs/final-cleanup",
+  "prompts": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "total_additions": 10,
+      "total_deletions": 0,
+      "accepted_lines": 10,
+      "overriden_lines": 0
+    }
+  },
+  "sessions": {
+    "s_6da27b5bb00e1a": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_dea1f50e2ffe42HAHWSSNGjIjd",
+        "model": "big-pickle"
+      },
+      "human_author": "kk7188048 <42987863+kk7188048@users.noreply.github.com>",
+      "stats": {
+        "total_additions": 10,
+        "total_deletions": 0,
+        "accepted_lines": 10,
+        "overriden_lines": 0,
+        "files": {
+          "README.md": {
+            "total_additions": 10,
+            "total_deletions": 0,
+            "accepted_lines": 10,
+            "overriden_lines": 0
+          }
+        }
+      }
+    }
+  }
+}
